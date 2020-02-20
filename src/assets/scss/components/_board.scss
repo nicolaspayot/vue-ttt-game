@@ -1,0 +1,13 @@
+.game {
+  &__board {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    width: 600px;
+    height: 600px;
+    background-color: $color-primary--light;
+    color: #fff;
+    border: 6px solid $color-primary;
+    border-radius: 10px;
+    @include box-shadow;
+  }
+}

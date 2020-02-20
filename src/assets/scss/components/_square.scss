@@ -1,0 +1,43 @@
+.game {
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid $color-primary;
+    font-weight: bold;
+    font-size: 6em;
+    transition: all 0.1s;
+
+    &:not(.game__box--x):not(.game__box--o):not(.game__box--over) {
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-primary--medium;
+      }
+
+      &:active {
+        box-shadow: inset 0 0 50px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    &--x,
+    &--o {
+      animation: play 300ms forwards;
+    }
+
+    &--x {
+      color: $color-primary--xlight;
+    }
+
+    &--o {
+      color: $color-primary--dark;
+    }
+
+    &--winner {
+      > span {
+        animation: winner 300ms forwards;
+        animation-delay: 100ms;
+      }
+    }
+  }
+}

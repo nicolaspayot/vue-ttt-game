@@ -1,0 +1,28 @@
+.game {
+  &__action {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    > button {
+      padding: 15px 80px;
+      font-size: 1.5em;
+      background: $color-primary--medium;
+      border: 6px solid $color-primary;
+      border-radius: 10px;
+      outline: none;
+      color: $color-white;
+      cursor: pointer;
+      transition: transform 0.2s;
+      @include box-shadow;
+
+      &:hover {
+        background: $color-primary--dark;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
