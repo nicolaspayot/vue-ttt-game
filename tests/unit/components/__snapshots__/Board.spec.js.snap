@@ -2,6 +2,7 @@
 
 exports[`Board.vue should render a Board with 9 squares 1`] = `
 <div class="game">
+  <div class="game__status"><span>Next player is X</span></div>
   <div class="game__board">
     <div class="game__box"><span></span></div>
     <div class="game__box"><span></span></div>
@@ -13,5 +14,6 @@ exports[`Board.vue should render a Board with 9 squares 1`] = `
     <div class="game__box"><span></span></div>
     <div class="game__box"><span></span></div>
   </div>
+  <div class="game__action"><button>Restart game</button></div>
 </div>
 `;
