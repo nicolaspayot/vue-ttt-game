@@ -233,3 +233,34 @@ describe("Board.vue", () => {
   });
 });
 ```
+
+## 👉 Step 6 (advanced workshop)
+
+> Routing
+
+### Goal
+
+Add a lobby page before starting the game. In this lobby, you shall be able to name the players.
+
+### How-to
+
+#### The `Lobby.vue` component
+
+Create a new component that should allow you to set two player names.
+Add a button that will later launch the game using the Vue navigation mechanism.
+
+#### Configure VueX
+
+Add multiple steps to encapsulate player names and thus, have an easy way to share data across your components.
+
+#### Configure Vue-Router
+
+- Add the dependency `vue-router` to your package.json and run `npm install` again.
+- Configure two paths for you app, one for the Lobby component and the other one to your Board component.
+
+#### Adapt the existing components
+
+- Change App.vue to hold routing logic
+- The app should now point by default to the Lobby component and the restart button should also bring you back to the Lobby.
+- The status component can now retrieve player names from the store
+

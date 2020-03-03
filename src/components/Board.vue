@@ -61,6 +61,8 @@ export default {
     restartGame() {
       this.player = "X";
       this.squares = Array(9).fill(null);
+      this.$store.commit("clear");
+      this.$router.push({ path: "/" });
     }
   }
 };
