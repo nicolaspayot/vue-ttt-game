@@ -1,18 +1,18 @@
 <template>
-  <div class="lobby">
+  <form class="lobby" @submit.prevent="start">
     <div>
-      <label>Player 1 name</label>
-      <input type="text" v-model="player1" />
+      <label>Player 1</label>
+      <input type="text" v-model="player1" placeholder="Name for player 1" />
     </div>
     <div>
-      <label>Player 2 name</label>
-      <input type="text" v-model="player2" />
+      <label>Player 2</label>
+      <input type="text" v-model="player2" placeholder="Name for player 2" />
     </div>
 
     <div class="lobby__action">
-      <button :disabled="!player1 || !player2" @click="start">Start the game</button>
+      <button type="submit" :disabled="!player1 || !player2">Start the game</button>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -30,7 +30,7 @@ export default {
       this.$router.push({ path: "/game" });
     }
   },
-  beforeRouteEnter (to, from, next) {
+  beforeRouteEnter(to, from, next) {
     next(vm => {
       vm.player1 = null;
       vm.player2 = null;

@@ -5,13 +5,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    player1: null,
-    player2: null
+    player1Name: null,
+    player2Name: null
   },
   mutations: {
     clear(state) {
-      state.player1 = null;
-      state.player2 = null;
+      state.player1Name = null;
+      state.player2Name = null;
     },
     player1Name(state, value) {
       state.player1Name = value;

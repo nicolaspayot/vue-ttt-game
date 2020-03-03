@@ -1,13 +1,23 @@
-import { mount } from "@vue/test-utils";
+import { mount, createLocalVue } from "@vue/test-utils";
+import Vuex from "vuex";
 import Board from "@/components/Board";
 import Square from "@/components/Square";
+
+const localVue = createLocalVue();
+localVue.use(Vuex);
 
 describe("Board.vue", () => {
   let wrapper;
   let vm;
 
   beforeEach(() => {
-    wrapper = mount(Board);
+    const store = new Vuex.Store({
+      state: {
+        player1Name: "X",
+        player2Name: "O"
+      }
+    });
+    wrapper = mount(Board, { store, localVue });
     vm = wrapper.vm;
   });
 

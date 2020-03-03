@@ -14,7 +14,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 1.5em;
   }
 
   &__action {
@@ -34,7 +34,7 @@
       transition: transform 0.2s;
       @include box-shadow;
 
-      &:hover {
+      &:hover:not(:disabled) {
         background: $color-primary--dark;
       }
 
@@ -43,6 +43,7 @@
       }
 
       &:disabled {
+        cursor: default;
         opacity: 0.3;
       }
     }

@@ -7,6 +7,10 @@
 </template>
 
 <script>
+function playerName(player, { state }) {
+  return player === "X" ? state.player1Name : state.player2Name;
+}
+
 export default {
   props: {
     winner: String,
@@ -15,10 +19,10 @@ export default {
   },
   computed: {
     playerName() {
-      return this.player === "X" ? this.$store.state.player1Name : this.$store.state.player2Name;
+      return playerName(this.player, this.$store);
     },
     winnerName() {
-      return this.winner === "X" ? this.$store.state.player1Name : this.$store.state.player2Name;
+      return playerName(this.winner, this.$store);
     }
   }
 };
