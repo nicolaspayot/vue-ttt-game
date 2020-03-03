@@ -236,7 +236,7 @@ describe("Board.vue", () => {
 
 ## 👉 Step 6 (advanced workshop)
 
-> Routing
+> Routing and shared state
 
 ### Goal
 
