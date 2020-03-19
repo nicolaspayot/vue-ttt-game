@@ -251,6 +251,7 @@ Add a lobby page before starting the game. In this lobby, you shall be able to n
 
 #### Configure VueX
 
+- Add the dependency `vuex` to your package.json with the command `yarn add vuex`.
 - Add multiple steps to encapsulate player names and thus, have an easy way to share data across your components.
 
 #### Configure Vue-Router
