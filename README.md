@@ -4,26 +4,26 @@
 
 - [Git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/) >= 12.16.1
-- npm >= 6.13.1
+- yarn >= 1.22.0
 - [Visual Studio Code](https://code.visualstudio.com/) with the [Vetur extension](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 - Recent version of Google Chrome with the [Vue.js devtools extension](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 
 ## Install
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Usage
 
 ```bash
-npm run serve
+yarn serve
 ```
 
 ## Run unit tests
 
 ```bash
-npm run test:unit
+yarn test:unit
 ```
 
 ## 🧑‍🏫 Rules
@@ -36,8 +36,8 @@ npm run test:unit
 ## 👉 Step 0
 
 - Clone the repository on your computer: `git clone https://github.com/nicolaspayot/vue-ttt-game.git`
-- Install the dependencies: `npm install`
-- Start the development server: `npm run serve`
+- Install the dependencies: `yarn install`
+- Start the development server: `yarn serve`
 - Go to http://localhost:8080 and open the devtools 👀
 
 ## 👉 Step 1
@@ -246,20 +246,20 @@ Add a lobby page before starting the game. In this lobby, you shall be able to n
 
 #### The `Lobby.vue` component
 
-Create a new component that should allow you to set two player names.
-Add a button that will later launch the game using the Vue navigation mechanism.
+- Create a new component that should allow you to set two player names.
+- Add a button that will later launch the game using the Vue navigation mechanism.
 
 #### Configure VueX
 
-Add multiple steps to encapsulate player names and thus, have an easy way to share data across your components.
+- Add multiple steps to encapsulate player names and thus, have an easy way to share data across your components.
 
 #### Configure Vue-Router
 
-- Add the dependency `vue-router` to your package.json and run `npm install` again.
-- Configure two paths for you app, one for the Lobby component and the other one to your Board component.
+- Add the dependency `vue-router` to your package.json with the command `yarn add vue-router`.
+- Configure two paths for your app, one for the `Lobby` component and the other one to your `Board` component.
 
 #### Adapt the existing components
 
-- Change App.vue to hold routing logic
-- The app should now point by default to the Lobby component and the restart button should also bring you back to the Lobby.
-- The status component can now retrieve player names from the store
+- Change `App.vue` to hold routing logic.
+- The app should now point by default to the `Lobby` component and the restart button should also bring you back to the Lobby.
+- The `Status` component can now retrieve player names from the store.
