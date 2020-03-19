@@ -1,5 +1,9 @@
 # Let's play Tic Tac Toe with Vue.js 🤓
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/430d318b-b0b2-41e3-96d8-ac56dc5e2b8e/deploy-status)](https://app.netlify.com/sites/vue-ttt-game/deploys)
+
+Final result is visible here: https://vue-ttt-game.netlify.com/#/
+
 ## Requirements
 
 - [Git](https://git-scm.com/)
