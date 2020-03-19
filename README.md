@@ -146,7 +146,53 @@ Improve the UX (User eXperience) by allowing users to restart the game without r
 - In the `Board` component template, add the `Restart` component **on the last position inside** the `<div class="game">` tag.
 - Add a method `restartGame` that will **reset** the game on the click event of the `Restart` component.
 
-## 👉 Step 5 (bonus)
+## 👉 Step 5 (advanced workshop)
+
+> Routing and shared state
+
+### Goal
+
+Add a lobby page before starting the game. In this lobby, you shall be able to name the players.
+
+### How-to
+
+#### The `Lobby.vue` component
+
+- Create a new component `Lobby.vue` that should allow you to set two player names. Use the following template:
+
+```html
+<form class="lobby">
+  <div>
+    <label>Player 1</label>
+    <input type="text" placeholder="Name for player 1" />
+  </div>
+  <div>
+    <label>Player 2</label>
+    <input type="text" placeholder="Name for player 2" />
+  </div>
+
+  <div class="lobby__action">
+    <button type="submit">Start the game</button>
+  </div>
+</form>
+```
+
+- The button "Start the game" should launch the game using the Vue navigation mechanism.
+
+#### Configure Vue-Router
+
+- Add the dependency `vue-router` to your package.json with the command `yarn add vue-router`.
+- Configure two paths for your app, one for the `Lobby` component and the other one to your `Board` component.
+- Change `App.vue` to hold routing logic.
+- The app should now point by default to the Lobby component and the restart button should also bring you back to the Lobby.
+
+#### Configure VueX
+
+- Add the dependency `vuex` to your package.json with the command `yarn add vuex`.
+- Add player names to the Vuex store to share these data across your components.
+- The `Status` component can now retrieve player names from the store.
+
+## 👉 Step 6 (bonus)
 
 > Unit Tests
 
@@ -237,34 +283,3 @@ describe("Board.vue", () => {
   });
 });
 ```
-
-## 👉 Step 6 (advanced workshop)
-
-> Routing and shared state
-
-### Goal
-
-Add a lobby page before starting the game. In this lobby, you shall be able to name the players.
-
-### How-to
-
-#### The `Lobby.vue` component
-
-- Create a new component that should allow you to set two player names.
-- Add a button that will later launch the game using the Vue navigation mechanism.
-
-#### Configure VueX
-
-- Add the dependency `vuex` to your package.json with the command `yarn add vuex`.
-- Add multiple steps to encapsulate player names and thus, have an easy way to share data across your components.
-
-#### Configure Vue-Router
-
-- Add the dependency `vue-router` to your package.json with the command `yarn add vue-router`.
-- Configure two paths for your app, one for the `Lobby` component and the other one to your `Board` component.
-
-#### Adapt the existing components
-
-- Change `App.vue` to hold routing logic.
-- The app should now point by default to the `Lobby` component and the restart button should also bring you back to the Lobby.
-- The `Status` component can now retrieve player names from the store.
