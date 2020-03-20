@@ -6,21 +6,26 @@
         v-for="(squareValue, position) in squares"
         :key="position"
         :value="squareValue"
+        :is-game-over="isGameOver"
+        :is-winner="isWinner(position)"
         @click="onSquareClick(position)"
       />
     </div>
+    <Restart @click="reset()"/>
   </div>
 </template>
 
 <script>
 import Status from "./Status";
 import Square from "./Square";
+import Restart from "./Restart";
 import getWinner from "../utils/winner";
 
 export default {
   components: {
     Status,
-    Square
+    Square,
+    Restart
   },
   data() {
     return {
@@ -29,6 +34,9 @@ export default {
     };
   },
   computed: {
+    isGameOver() {
+      return this.isDrawGame || this.winner.player != null;
+    },
     winner() {
       return getWinner(this.squares);
     },
@@ -43,6 +51,12 @@ export default {
       }
       this.$set(this.squares, position, this.player);
       this.player = this.player === "X" ? "O" : "X";
+    },
+    isWinner(position) {
+      return this.winner.positions.includes(position);
+    },
+    reset() {
+      this.$router.push("/");
     }
   }
 };

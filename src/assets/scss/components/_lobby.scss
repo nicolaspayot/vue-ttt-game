@@ -1,0 +1,51 @@
+.lobby {
+  label {
+    font-size: 3em;
+    font-weight: 500;
+    align-self: center;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+  }
+
+  &__action {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+
+    > button {
+      padding: 15px 80px;
+      font-size: 1.5em;
+      background: $color-primary--medium;
+      border: 6px solid $color-primary;
+      border-radius: 10px;
+      outline: none;
+      color: $color-white;
+      cursor: pointer;
+      transition: transform 0.2s;
+      @include box-shadow;
+
+      &:hover:not(:disabled) {
+        background: $color-primary--dark;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0.3;
+      }
+    }
+  }
+}
